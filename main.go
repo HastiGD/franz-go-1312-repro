@@ -68,6 +68,9 @@ func main() {
 
 	logger := &detectingLogger{out: os.Stdout, level: kgo.LogLevelDebug}
 
+	v := kversion.Stable()
+	v.SetMaxKeyVersion(9, 6)
+
 	cl, err := kgo.NewClient(
 		kgo.SeedBrokers(endpoint),
 		kgo.SASL(plain.Plain(func(_ context.Context) (plain.Auth, error) {
@@ -77,7 +80,7 @@ func main() {
 		kgo.ConsumerGroup(group),
 		kgo.ConsumeTopics(topic),
 		kgo.MinVersions(kversion.V1_0_0()),
-		kgo.MaxVersions(kversion.V3_8_0()),
+		kgo.MaxVersions(v),
 		kgo.WithLogger(logger),
 	)
 	if err != nil {
