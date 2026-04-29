@@ -1,0 +1,4 @@
+/franz-go-1312-repro
+*.log
+.env
+.DS_Store

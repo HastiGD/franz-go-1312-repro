@@ -1,0 +1,13 @@
+module github.com/HastiGD/franz-go-1312-repro
+
+go 1.25.0
+
+require github.com/twmb/franz-go v1.21.0
+
+require (
+	github.com/klauspost/compress v1.18.5 // indirect
+	github.com/pierrec/lz4/v4 v4.1.26 // indirect
+	github.com/twmb/franz-go/pkg/kmsg v1.13.1 // indirect
+)
+
+replace github.com/twmb/franz-go => github.com/HastiGD/franz-go v0.0.0-20260428190405-2585d244bf6b
