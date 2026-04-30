@@ -69,7 +69,7 @@ func main() {
 	logger := &detectingLogger{out: os.Stdout, level: kgo.LogLevelDebug}
 
 	v := kversion.Stable()
-	v.SetMaxKeyVersion(9, 6)
+	v.SetMaxKeyVersion(9, 7)
 
 	cl, err := kgo.NewClient(
 		kgo.SeedBrokers(endpoint),
